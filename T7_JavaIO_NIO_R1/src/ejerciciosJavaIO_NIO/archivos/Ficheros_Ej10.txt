@@ -1,0 +1,7 @@
+F funciona.txt
+F crea.txt
+F archivos.txt
+F perfectamente.txt
+F ConMayusculasTambien.txt
+F nofuncionaria.ERRW
+F tampocoFunci0na.txt
