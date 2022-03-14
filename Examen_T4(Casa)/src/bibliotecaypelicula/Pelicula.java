@@ -1,5 +1,7 @@
 package bibliotecaypelicula;
 
+import excepciones.FechaEstrenoException;
+
 public class Pelicula {
 
 	private String titulo;
@@ -21,7 +23,11 @@ public class Pelicula {
 	public int getEstreno() {
 		return estreno;
 	}
-	public void setEstreno(int estreno) {
+	public void setEstreno(int estreno) throws FechaEstrenoException {
+		if(estreno < 1950 || estreno > 2022) {
+			throw new FechaEstrenoException("La fecha indicada no es válida.");
+		}
+		
 		this.estreno = estreno;
 	}
 	public String getDirector() {

@@ -3,6 +3,7 @@ package menu;
 import Leer.Leer;
 import bibliotecaypelicula.Biblioteca;
 import bibliotecaypelicula.Pelicula;
+import excepciones.FechaEstrenoException;
 
 public class FuncionesBiblioteca {
 	
@@ -53,7 +54,19 @@ public class FuncionesBiblioteca {
 			
 			nuevaPelicula.setTitulo(Leer.lecturaString("Introduce el título de la película."));
 			
-			nuevaPelicula.setEstreno(Leer.lecturaInt("Introduce el año de estreno de la película."));
+			while(nuevaPelicula.getEstreno() == 0) {
+				
+				try {
+					
+					nuevaPelicula.setEstreno(Leer.lecturaInt("Introduce el año de estreno de la película."));
+					
+				} catch (FechaEstrenoException e) {
+					
+					System.out.println(e.getMessage());
+					
+				}
+				
+			}
 			
 			nuevaPelicula.setDirector(Leer.lecturaString("Introduce el nombre del director."));
 			
