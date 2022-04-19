@@ -1,55 +1,56 @@
-package ej_1;
+package ej_2;
 
 import java.util.HashSet;
+import java.util.Set;
 
-public class Equipo {
+public class Equipo<T>{
 
 	private String nombreEquipo;
-	private HashSet<Alumno> miembrosEquipo;
+	private Set<T> miembrosEquipo;
 	
 	public Equipo(String nombreEquipo) {
-		miembrosEquipo = new HashSet<Alumno>();
+		miembrosEquipo = new HashSet<T>();
 		this.nombreEquipo = nombreEquipo;
 	}
 
 	
-	public void añadirMiembroEquipo(Alumno alumno) throws AlumnoException {
+	public void añadirMiembroEquipo(T miembro) throws AlumnoException {
 		
-		if(buscarAlumno(alumno) != null) {
+		if(buscarAlumno(miembro) != null) {
 			
 			throw new AlumnoException("El alumno ya existe en el equipo.");
 			
 		}
 		
-		this.miembrosEquipo.add(alumno);
+		this.miembrosEquipo.add(miembro);
 		
 	}
 	
-	public void eliminarMiembro(Alumno alumno) throws AlumnoException {
+	public void eliminarMiembro(T miembro) throws AlumnoException {
 		
-		if(buscarAlumno(alumno) == null) {
+		if(buscarAlumno(miembro) == null) {
 			
 			throw new AlumnoException("El alumno no pertenece al equipo.");
 			
 		}
 		
-		this.miembrosEquipo.remove(alumno);
+		this.miembrosEquipo.remove(miembro);
 		
 	}
 	
-	public Alumno buscarAlumno(Alumno alumnoBuscar) {
+	public T buscarAlumno(T miembroBuscar) {
 		
-		Alumno alumnoEncontrado = null;
+		T miembroEncontrado = null;
 		
-		for(Alumno alumno : this.miembrosEquipo) {
+		for(T alumno : this.miembrosEquipo) {
 			
-			if(alumno.equals(alumnoBuscar)) {
-				alumnoEncontrado = alumno;
+			if(alumno.equals(miembroBuscar)) {
+				miembroEncontrado = alumno;
 			}
 			
 		}
 		
-		return alumnoEncontrado;
+		return miembroEncontrado;
 		
 	}
 	
