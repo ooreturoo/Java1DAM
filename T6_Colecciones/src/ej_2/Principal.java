@@ -4,7 +4,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		Equipo equipo1 = new Equipo("Equipo1");
+		Equipo<Alumno> equipo1 = new Equipo<>("Equipo1");
 		
 		try {
 			equipo1.añadirMiembroEquipo(new Alumno("Pepe", "1544354"));
@@ -24,7 +24,7 @@ public class Principal {
 	
 		
 		
-		Equipo equipo2 = new Equipo("Equipo2");
+		Equipo<Alumno> equipo2 = new Equipo<>("Equipo2");
 		try {
 			equipo2.añadirMiembroEquipo(new Alumno("Josefa", "1542321"));
 			equipo2.añadirMiembroEquipo(new Alumno("López", "154212"));
@@ -40,7 +40,7 @@ public class Principal {
 		
 		
 		
-		Equipo fusionEquipo;
+		Equipo<Alumno> fusionEquipo;
 		
 		try {
 			fusionEquipo = equipo1.unirEquipos(equipo2);
@@ -50,7 +50,7 @@ public class Principal {
 			e.printStackTrace();
 		}
 		
-		Equipo interseccion;
+		Equipo<Alumno> interseccion;
 		
 		try {
 			
@@ -64,11 +64,11 @@ public class Principal {
 		}
 		
 		
-		Alumno alumnoBuscado = equipo1.buscarAlumno(new Alumno("Josefa", "1542321"));
-		
-		if(alumnoBuscado != null) {
-			System.out.println(alumnoBuscado);
-		}
+//		Alumno alumnoBuscado = ;
+//		
+//		if(alumnoBuscado != null) {
+//			System.out.println(alumnoBuscado);
+//		}
 		
 		
 		

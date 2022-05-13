@@ -64,12 +64,12 @@ public class Equipo<T>{
 		System.out.println(sb);
 	}
 	
-	public Equipo unirEquipos(Equipo equipo) throws EquipoException {
+	public Equipo<T> unirEquipos(Equipo<T> equipo) throws EquipoException {
 		
-		Equipo nuevoEquipo = null;
+		Equipo<T> nuevoEquipo = null;
 		if(equipo != null) {
 			
-			nuevoEquipo = new Equipo("Fusión-" + this.nombreEquipo + equipo.nombreEquipo);
+			nuevoEquipo = new Equipo<T>("Fusión-" + this.nombreEquipo + equipo.nombreEquipo);
 			nuevoEquipo.miembrosEquipo.addAll(this.miembrosEquipo);
 			
 			if(equipo.miembrosEquipo.isEmpty()) {
@@ -78,11 +78,11 @@ public class Equipo<T>{
 				
 			}
 			
-			for(Alumno alumno : equipo.miembrosEquipo) {
+			for(T elemento : equipo.miembrosEquipo) {
 				
-				if(!this.miembrosEquipo.contains(alumno)) {
+				if(!this.miembrosEquipo.contains(elemento)) {
 					
-					nuevoEquipo.miembrosEquipo.add(alumno);
+					nuevoEquipo.miembrosEquipo.add(elemento);
 					
 				}
 				
@@ -94,12 +94,12 @@ public class Equipo<T>{
 		
 	}
 	
-	public Equipo interseccionEquipos(Equipo equipo) throws EquipoException {
+	public Equipo<T> interseccionEquipos(Equipo<T> equipo) throws EquipoException {
 		
-		Equipo interseccion = null;
+		Equipo<T> interseccion = null;
 		if(equipo != null) {
 			
-			interseccion = new Equipo("Interseccion-" + this.nombreEquipo + equipo.nombreEquipo);
+			interseccion = new Equipo<T>("Interseccion-" + this.nombreEquipo + equipo.nombreEquipo);
 			
 			if(equipo.miembrosEquipo.isEmpty()) {
 				
@@ -107,11 +107,11 @@ public class Equipo<T>{
 				
 			}
 			
-			for(Alumno alumno : equipo.miembrosEquipo) {
+			for(T elemento : equipo.miembrosEquipo) {
 				
-				if(this.miembrosEquipo.contains(alumno)) {
+				if(this.miembrosEquipo.contains(elemento)) {
 					
-					interseccion.miembrosEquipo.add(alumno);
+					interseccion.miembrosEquipo.add(elemento);
 					
 				}
 				

@@ -1,6 +1,8 @@
 package clases;
 
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -18,7 +20,26 @@ public class Resturante {
 		
 	}
 	
-	public void buscarReceta(String nombreReceta) throws RecetaException {
+	
+	public void buscarYMostrarReceta(String nombreReceta) throws RecetaException {
+		
+		Receta receta = buscarReceta(nombreReceta);
+		
+		Collections.sort(receta.getIngredientesNecesarios());
+		System.out.println(receta);
+		
+	}
+	
+	public void buscarYMostrarReceta(String nombreReceta, Comparator<Ingrediente> comparador) throws RecetaException {
+		
+		Receta receta = buscarReceta(nombreReceta);
+		
+		receta.getIngredientesNecesarios().sort(comparador);
+		System.out.println(receta);
+		
+	}
+	
+	private Receta buscarReceta(String nombreReceta) throws RecetaException {
 		Receta receta = null;
 		Iterator<Receta> iterador = platosEnCarta.iterator();
 		
@@ -40,13 +61,9 @@ public class Resturante {
 			
 		}
 		
-		
-		
-		System.out.println(receta);
-		
+		return receta;
 		
 	}
-	
 	
 	
 	public void agregarReceta() {

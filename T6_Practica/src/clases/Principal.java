@@ -28,7 +28,7 @@ public class Principal {
 		System.out.println(cocinable);
 		
 		try {
-			rest.buscarReceta("Receta 1");
+			rest.buscarYMostrarReceta("Receta 1");
 		} catch (RecetaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
