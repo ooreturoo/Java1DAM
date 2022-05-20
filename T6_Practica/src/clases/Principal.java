@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.Collections;
-import java.util.Iterator;
 
 public class Principal {
 
@@ -25,14 +23,13 @@ public class Principal {
 		
 		boolean cocinable =rest.getCocina().comprobarPosibilidadCocinarReceta(receta1);
 	
-		System.out.println(cocinable);
+		rest.comparIngrediente();
 		
-		try {
-			rest.buscarYMostrarReceta("Receta 1");
-		} catch (RecetaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		rest.getCocina().getDespensa().forEach(System.out::println);
+		
+		rest.comparIngrediente();
+		
+		rest.getCocina().getDespensa().forEach(System.out::println);
 		
 	}
 	

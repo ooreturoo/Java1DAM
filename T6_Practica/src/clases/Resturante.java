@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import Leer.Leer;
 
@@ -16,7 +18,7 @@ public class Resturante {
 	public Resturante() {
 		
 		platosEnCarta = new LinkedList<Receta>();
-		cocina = new Cocina(this);
+		cocina = new Cocina();
 		
 	}
 	
@@ -62,6 +64,40 @@ public class Resturante {
 		}
 		
 		return receta;
+		
+	}
+	
+	public List<Receta> recetasPosiblesCocinar(){
+		
+		List<Receta> recetasPosibles = platosEnCarta.stream()
+												.filter( receta -> getCocina().comprobarPosibilidadCocinarReceta(receta))
+												.collect(Collectors.toList());
+		
+		return recetasPosibles;
+		
+	}
+	
+	public void comparIngrediente() {
+		
+		String nombreIngrediente = Leer.lecturaString("Introduce el nombre del ingrediente que quieres comprar.");
+		int cantidad = Leer.lecturaInt("¿Que cantidad de " + nombreIngrediente + " quieres comprar?", 0, true);
+	
+		Iterator<Ingrediente> iterador = cocina.getDespensa().iterator();
+		
+		while(iterador.hasNext()) {
+			
+			Ingrediente ing = iterador.next();
+			
+			if(ing.getNombre().equals(nombreIngrediente)) {
+				
+				cantidad += ing.getCantidad();
+				iterador.remove();
+				
+			}
+			
+			cocina.getDespensa().add(new Ingrediente(nombreIngrediente, cantidad));
+			
+		}
 		
 	}
 	
