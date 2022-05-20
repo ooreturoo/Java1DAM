@@ -48,7 +48,7 @@ public class Ejercicio5 {
 		}
 	}
 	
-	private static final String PATH = "src/ejerciciosJavaIO_NIO/archivos/"; //Establece la direccion de un directorio por defecto.
+	private static final String PATH = "src/ejerciciosJavaIO_NIO/archivos"; //Establece la direccion de un directorio por defecto.
 	
 	/**
 	 * Metodo que crea un directorio en una direccion elegida por el usuario.
@@ -56,7 +56,7 @@ public class Ejercicio5 {
 	private static void crearDirectorio() {
 		//Pide el nombre para el directorio y lo guarda en la variable.
 		String nombreDir = Leer.lecturaString("Introduce el nombre del directorio.");
-		Path path = Paths.get(PATH + nombreDir);//Crea la ruta sumando la que establecimos por defecto y la que introduce el usuario.
+		Path path = Paths.get(PATH,nombreDir);//Crea la ruta sumando la que establecimos por defecto y la que introduce el usuario.
 		
 		//Comprueba si el directorio con ese nombre no existe.Si no existe lo creamos, y si existe avisa al usuario.
 		if(Files.notExists(path)) {
