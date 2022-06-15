@@ -30,7 +30,6 @@ public class Ejercicio_11 {
 							while(mGroup.find()) {
 								list.add(mGroup.group(1));
 							}
-
 							Path cursos = Paths.get(PATHCURSOS.toString(),m.group(2));
 							
 							String s =list.get(1) + list.get(2) + list.get(0);

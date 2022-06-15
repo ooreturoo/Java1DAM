@@ -57,14 +57,18 @@ public class Ejercicio2 {
 		return contadorPalabras;
 	}
 	private static void buscarPalabra(BufferedReader reader, Matcher m,String palabra, int fila, int columna) throws IOException {
-		if(m.group(1).matches(palabra)) {
+
+		System.out.println(m.group(1));
+		if(m.group(1).matches(palabra +"\\.?")) {
 			Path pathPalabra = Paths.get(PATH, "BuscandoPalabra" + palabra + ".txt");
+
 			if(Files.notExists(pathPalabra)) {
 				Files.createFile(pathPalabra);
+			
 			}
 			BufferedWriter writer = Files.newBufferedWriter(pathPalabra, StandardOpenOption.WRITE);
 			writer.write("Fila= " + fila + " Columna= " + columna);
-			writer.flush();
+			writer.close();
 			
 		}
 			

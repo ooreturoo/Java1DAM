@@ -1,0 +1,57 @@
+<aeropuerto codigo="MAD">
+<vuelo id="10501017" codigo="IB3021">
+<compañía>Iberia</compañía>
+<hora_salida>10:15</hora_salida>
+<destino>Cancún</destino>
+</vuelo>
+<vuelo id="10501994" codigo="IB2859">
+<compañía>Iberia</compañía>
+<hora_salida>10:25</hora_salida>
+<destino>Sicilia</destino>
+</vuelo>
+<vuelo id="12277634" codigo="BA221">
+<compañía>British Airways</compañía>
+<hora_salida>10:29</hora_salida>
+<destino>Londres Stansted</destino>
+</vuelo>
+<vuelo id="30111422" codigo="AA9744">
+<compañía>American Airlines</compañía>
+<hora_salida>10:35</hora_salida>
+<destino>Los Ángeles</destino>
+</vuelo>
+<vuelo id="32523017" codigo="AV3299">
+<compañía>Avianca</compañía>
+<hora_salida>10:45</hora_salida>
+<destino>Bogotá</destino>
+</vuelo>
+<vuelo id="10543319" codigo="AE6622">
+<compañía>Air Europa</compañía>
+<hora_salida>10:48</hora_salida>
+<destino>Tenerife Sur</destino>
+</vuelo>
+<vuelo id="10501010" codigo="IB3021">
+<compañía>Iberia</compañía>
+<hora_salida>10:55</hora_salida>
+<destino>Tokyo</destino>
+</vuelo>
+<vuelo id="40147112" codigo="QA8110">
+<compañía>Qatar Airways</compañía>
+<hora_salida>11:05</hora_salida>
+<destino>Dubai</destino>
+</vuelo>
+<vuelo id="12277336" codigo="BA7444">
+<compañía>British Airways</compañía>
+<hora_salida>11:11</hora_salida>
+<destino>Londres Gatwick</destino>
+</vuelo>
+<vuelo id="30123118" codigo="UA5442">
+<compañía>United Airlines</compañía>
+<hora_salida>11:15</hora_salida>
+<destino>Nueva York JFK</destino>
+</vuelo>
+<vuelo id="10501063" codigo="IB5961">
+<compañía>Iberia</compañía>
+<hora_salida>11:25</hora_salida>
+<destino>Tenerife Sur</destino>
+</vuelo>
+</aeropuerto>
